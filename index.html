@@ -1,0 +1,29 @@
+<html>
+<title>LogIn SingUp</title>
+<link rel="stylesheet" type="text/css" href="main.css">
+<body>
+<form id="form">
+<table id="tableind">
+	<tr>
+		<td><input class="button" type="button" value="LogIn" onclick="login()"></td>
+	</tr>
+	<tr>
+		<td><input class="button" type="button" value="SingUp" onclick="singup()"></td>
+	</tr>
+</table>
+</form>
+<script type="text/javascript">
+ function login() {
+		var newPage=document.getElementById("form");
+		newPage.action="LogIn.php";
+		newPage.submit();	
+}
+ function singup() {
+		var newPage=document.getElementById("form");
+		newPage.action="SingUp.php";
+		newPage.submit();	
+}
+</script>
+</body>
+
+</html>
