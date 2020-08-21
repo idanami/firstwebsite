@@ -22,12 +22,10 @@ if(isset($_POST['log_in'])){
             }
         }
     }
-
 }
 //close mysql
 mysqli_close($con);
 ?>
-
 <!DOCTYPE HTML>
 <html>
 <head>
