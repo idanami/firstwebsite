@@ -6,11 +6,11 @@ if(!(mysqli_query($con, "SELECT * FROM users")))
     (id INT(11) AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(256),email VARCHAR(256),pass VARCHAR(256))";
 mysqli_query($con, $sql);
-$sql="CREATE TABLE select_seat
+$sql="CREATE TABLE cinema_select
     (id INT(11) AUTO_INCREMENT PRIMARY KEY,
     seat_selected VARCHAR(256))";
 mysqli_query($con, $sql);
-$sql="CREATE TABLE selected
+$sql="CREATE TABLE cinemaAndMovie_select
     (id INT(11) AUTO_INCREMENT PRIMARY KEY,
     selected VARCHAR(256))";
 mysqli_query($con, $sql);
