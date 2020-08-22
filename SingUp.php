@@ -8,11 +8,11 @@ if(!(mysqli_query($con, "SELECT * FROM users")))
 mysqli_query($con, $sql);
 $sql="CREATE TABLE cinema_select
     (id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    seat_selected VARCHAR(256))";
+    cinema_name VARCHAR(256))";
 mysqli_query($con, $sql);
 $sql="CREATE TABLE cinemaAndMovie_select
     (id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    selected VARCHAR(256))";
+    cinemaAndMovie_name VARCHAR(256))";
 mysqli_query($con, $sql);
 }
 if(isset($_POST['register_btn'])){    
