@@ -19,7 +19,7 @@ $result=mysqli_query($con, "SELECT * FROM theaters_list");
     	    echo "<h2>please select movie</h2>";
             $all_movie=$_POST['cinema_name'];
             $id=3;
-            $sql="UPDATE selected SET selected='$all_movie' WHERE id='$id'";
+            $sql="UPDATE cinema_select SET cinema_name ='$all_movie' WHERE id='$id'";
             mysqli_query($con, $sql);
             $result=mysqli_query($con, "SELECT * FROM $all_movie");
             while ($row=mysqli_fetch_array($result)) {?>
@@ -29,10 +29,10 @@ $result=mysqli_query($con, "SELECT * FROM theaters_list");
          <br><br>
     	<?php if(isset($_POST['movie_list'])){
     	    echo "<h3>please select seats</h3>";
-    	    $result=mysqli_query($con, "SELECT * FROM selected");
+    	    $result=mysqli_query($con, "SELECT * FROM cinema_select");
     	    $cinemaName="";
     	    while ($row=mysqli_fetch_array($result)) 
-    	        $cinemaName=$row['selected'];
+    	        $cinemaName=$row['cinema_name'];
             $movie_selected=$_POST['movie_list'];
             $movie_name=$movie_selected;
             for ($i = 0; $i < strlen($movie_selected); $i++) {
@@ -42,7 +42,7 @@ $result=mysqli_query($con, "SELECT * FROM theaters_list");
                         $movie_name[$i] =$movie_selected[$i];
             }
             $cinemaAndMovieName=$cinemaName."_".$movie_name; 
-            $sql="UPDATE select_seat  SET seat_selected='$cinemaAndMovieName' WHERE id='1'";
+            $sql="UPDATE cinemaAndMovie_select  SET cinemaAndMovie_name='$cinemaAndMovieName' WHERE id='1'";
             mysqli_query($con, $sql);
             $index=1;
             $result=mysqli_query($con, "SELECT * FROM $cinemaAndMovieName");
@@ -64,9 +64,9 @@ $result=mysqli_query($con, "SELECT * FROM theaters_list");
             }	
               echo '<br><br><input type="submit" name="seat_selec">';}
               $local="";
-              $result=mysqli_query($con, "SELECT * FROM select_seat");
+              $result=mysqli_query($con, "SELECT * FROM cinemaAndMovie_select");
               while ($row=mysqli_fetch_array($result))
-                  $cinemaandmovie=$row['seat_selected'];
+                  $cinemaandmovie=$row['cinemaAndMovie_name'];
               if(isset($_POST['seat_selec'])){
                   if(!empty($_POST['seat'])&&!empty($_POST['seatname'])){
                       foreach($_POST['seat'] as $seatSelected){
